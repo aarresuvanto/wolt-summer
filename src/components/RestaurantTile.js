@@ -3,6 +3,7 @@ import React from 'react'
 const RestaurantTile = ({ restaurants, image, description, name }) => {
     const tileStyle = {
         width: 270,
+        overflow: "hidden",
         marginTop: 25,
         marginLeft: "auto",
         marginRight: "auto",
@@ -13,7 +14,9 @@ const RestaurantTile = ({ restaurants, image, description, name }) => {
     }
 
     const imageStyle = {
-        width: 270,
+        textAlign: "center",
+        width: "auto",
+        height: 200,
         borderTopRightRadius: 7,
         borderTopLeftRadius: 7,
     }
