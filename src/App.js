@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
+import React, { useState } from 'react';
+import RestaurantTile from './components/RestaurantTile'
 
 const restaurantData = require('./restaurants.json')
 
@@ -16,9 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
-        {restaurantNamesListed}
-      </ul>
+      <RestaurantTile restaurants={restaurants} />
     </div>
   );
 }
