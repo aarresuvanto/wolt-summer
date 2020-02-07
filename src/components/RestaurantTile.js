@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RestaurantTile = ({ restaurants }) => {
+const RestaurantTile = ({ restaurants, image, description, name }) => {
     const tileStyle = {
         width: 270,
         marginTop: 25,
@@ -20,7 +20,7 @@ const RestaurantTile = ({ restaurants }) => {
 
     const descriptionStyle = {
         textAlign: "left",
-        marginLeft: 25,
+        marginLeft: 15,
         color: "grey",
         fontSize: 12,
         marginBottom: 0,
@@ -28,18 +28,16 @@ const RestaurantTile = ({ restaurants }) => {
 
     const nameStyle = {
         textAlign: "left",
-        marginLeft: 25,
+        marginLeft: 15,
         marginTop: 8,
-        fontSize: 16,
+        fontSize: 15,
     }
-
-    const socialBurgerjoint = restaurants[0]
 
     return (
         <div style={tileStyle}>
-            <img style={imageStyle} src={socialBurgerjoint.image} alt="juicyImage"/>
-            <p style={descriptionStyle}>{socialBurgerjoint.description}</p>
-            <p style={nameStyle}>{socialBurgerjoint.name}</p>
+            <img style={imageStyle} src={image} alt="juicyImage"/>
+            <p style={descriptionStyle}>{description}</p>
+            <p style={nameStyle}>{name}</p>
         </div>
     )
 }

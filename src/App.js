@@ -9,15 +9,15 @@ function App() {
 
   console.log(restaurants)
 
-  const restaurantNamesListed = restaurants.map((restaurant, index) => {
+  const restaurantTiles = restaurants.map((restaurant, index) => {
     return (
-          <li key={index}>{restaurant.name}</li>
+          <RestaurantTile key={index} image={restaurant.image} description={restaurant.description} name={restaurant.name}/>
     )
   })
 
   return (
     <div className="App">
-      <RestaurantTile restaurants={restaurants} />
+      {restaurantTiles}
     </div>
   );
 }
