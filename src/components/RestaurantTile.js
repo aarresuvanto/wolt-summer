@@ -2,7 +2,7 @@ import React from 'react'
 
 const RestaurantTile = ({ restaurants }) => {
     const tileStyle = {
-        width: 350,
+        width: 270,
         marginTop: 25,
         marginLeft: "auto",
         marginRight: "auto",
@@ -13,7 +13,7 @@ const RestaurantTile = ({ restaurants }) => {
     }
 
     const imageStyle = {
-        width: 350,
+        width: 270,
         borderTopRightRadius: 7,
         borderTopLeftRadius: 7,
     }
@@ -30,7 +30,7 @@ const RestaurantTile = ({ restaurants }) => {
         textAlign: "left",
         marginLeft: 25,
         marginTop: 8,
-        fontSize: 22,
+        fontSize: 16,
     }
 
     const socialBurgerjoint = restaurants[0]
