@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+
+const restaurantData = require('./restaurants.json')
 
 function App() {
   return (
