@@ -6,9 +6,10 @@ const RestaurantTile = ({ restaurants }) => {
         marginTop: 25,
         marginLeft: "auto",
         marginRight: "auto",
-        border: "0.15mm solid",
+        border: "0.35mm solid",
         borderRadius: 10,
-        borderColor: "lightGrey",
+        borderColor: "#e8e8e8",
+        boxShadow: "1px 1px 2px #e8e8e8"
     }
 
     const imageStyle = {
