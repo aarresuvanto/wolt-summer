@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RestaurantTile = ({ restaurants, image, description, name }) => {
+const RestaurantTile = ({ image, description, name }) => {
     const tileStyle = {
         width: 270,
         overflow: "hidden",

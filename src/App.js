@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import RestaurantTile from './components/RestaurantTile'
+import Search from './components/Search'
 
 const restaurantData = require('./restaurants.json')
 
@@ -9,15 +10,9 @@ function App() {
 
   console.log(restaurants)
 
-  const restaurantTiles = restaurants.map((restaurant, index) => {
-    return (
-          <RestaurantTile key={index} image={restaurant.image} description={restaurant.description} name={restaurant.name}/>
-    )
-  })
-
   return (
     <div className="App">
-      {restaurantTiles}
+      <Search restaurants={restaurants}/>
     </div>
   );
 }
