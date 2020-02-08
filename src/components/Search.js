@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import RestaurantTile from './RestaurantTile'
+import Sort from './Sort'
 
 const Search = ({ restaurants }) => {
     const [ searchTerm, setSearchTerm ] = useState('')
@@ -13,7 +14,7 @@ const Search = ({ restaurants }) => {
 
     const pTagStyle = {
         paddingTop: 50,
-        marginRight: 110,
+        fontSize: 16,
     }
 
     const h3Style = {
@@ -22,7 +23,7 @@ const Search = ({ restaurants }) => {
     }
 
     const filteredRestaurants = restaurants.filter(restaurant => {
-        return restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+        return restaurant.name.toLowerCase().includes(searchTerm.toLowerCase());
     })
 
     const restaurantsBySearchTerm = filteredRestaurants.map((restaurant, index) =>  {
@@ -39,9 +40,9 @@ const Search = ({ restaurants }) => {
     if(filteredRestaurants.length === 0) {
         return (
             <div>
-                <p style={pTagStyle}>Search for restaurants</p>
+                <p style={pTagStyle}>Search for restaurants by name</p>
                 <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
-                <h3 style={h3Style}>No restaurants to show with this search term. Try another one :)</h3>
+                <h3 style={h3Style}>No restaurants to show with this search term</h3>
             </div>
         )
     }
@@ -49,8 +50,9 @@ const Search = ({ restaurants }) => {
 
     return (
         <div>
-            <p style={pTagStyle}>Search for restaurants</p>
+            <p style={pTagStyle}>Search for restaurants by name</p>
             <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+            <Sort filteredRestaurants={filteredRestaurants}/>
             {restaurantsBySearchTerm}
         </div>
     )

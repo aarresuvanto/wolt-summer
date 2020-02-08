@@ -1,14 +1,11 @@
 import './App.css';
 import React, { useState } from 'react';
-import RestaurantTile from './components/RestaurantTile'
 import Search from './components/Search'
 
 const restaurantData = require('./restaurants.json')
 
 function App() {
-  const [ restaurants, setRestaurants ] = useState(restaurantData.restaurants)
-
-  console.log(restaurants)
+  const [ restaurants] = useState(restaurantData.restaurants)
 
   return (
     <div className="App">
