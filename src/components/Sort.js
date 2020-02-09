@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import RestaurantTile from './RestaurantTile'
 
-const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChange, restaurantsBySearchTerm, h3Style}) => {
-    const [ sortedRestaurants, setSortedRestaurants ] = useState([])
-    const [ asc, setAsc ] = useState(true)
-    const [ desc, setDesc ] = useState(false)
+const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChange, h3Style}) => {
+    const [ load, setLoad ] = useState(true)
     
     const orStyle = {
         fontSize: 14,
@@ -41,24 +39,8 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         fontStyle: "font-family: nimbus-sans-extended, sans-serif",
     }
 
-    const sortRestaurantsAlphabeticallyDESC = () => {
-        setSortedRestaurants(filteredRestaurants.sort((restaurantA, restaurantB) => {
-            restaurantA = restaurantA.name.toLowerCase()
-            restaurantB = restaurantB.name.toLowerCase()
-            if(restaurantA > restaurantB) {
-                return -1
-            }
-            if(restaurantB > restaurantA) {
-                return 1
-            }
-            return 0
-        }))
-        setDesc(false)
-        setAsc(true)
-    }
-
     const sortRestaurantsAlphabeticallyASC = () => {
-        setSortedRestaurants(filteredRestaurants.sort((restaurantA, restaurantB) => {
+        filteredRestaurants.sort((restaurantA, restaurantB) => {
             restaurantA = restaurantA.name.toLowerCase()
             restaurantB = restaurantB.name.toLowerCase()
             if(restaurantA < restaurantB) {
@@ -68,9 +50,23 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
                 return 1
             }
             return 0
-        }))
-        setAsc(false)
-        setDesc(true)
+        })
+        setLoad(false)
+    }
+
+    const sortRestaurantsAlphabeticallyDESC = () => {
+        filteredRestaurants.sort((restaurantA, restaurantB) => {
+            restaurantA = restaurantA.name.toLowerCase()
+            restaurantB = restaurantB.name.toLowerCase()
+            if(restaurantA > restaurantB) {
+                return -1
+            }
+            if(restaurantB > restaurantA) {
+                return 1
+            }
+            return 0
+        })
+        setLoad(true)
     }
 
     const sorted = filteredRestaurants.sort((restaurantA, restaurantB) => {
@@ -98,7 +94,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         )
     }
 
-    if(asc) {
+    if(load) {
         return (
             <div>
                 <input autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>

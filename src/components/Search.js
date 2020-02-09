@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import RestaurantTile from './RestaurantTile'
 import Sort from './Sort'
 
 const Search = ({ restaurants }) => {
@@ -31,12 +30,6 @@ const Search = ({ restaurants }) => {
         return restaurant.name.toLowerCase().includes(searchTerm.toLowerCase());
     })
 
-    const restaurantsBySearchTerm = filteredRestaurants.map((restaurant, index) =>  {
-        return (
-            <RestaurantTile key={index} image={restaurant.image} description={restaurant.description} name={restaurant.name}/>
-        )
-    })
-
     const handleSearchTermChange = (event) => {
         event.preventDefault()
         setSearchTerm(event.target.value)
@@ -44,7 +37,7 @@ const Search = ({ restaurants }) => {
 
     return (
         <div>
-            <Sort filteredRestaurants={filteredRestaurants} pTagStyle={pTagStyle} inputStyle={inputStyle} handleSearchTermChange={handleSearchTermChange} restaurantsBySearchTerm={restaurantsBySearchTerm} restaurants={restaurants} h3Style={h3Style}/>
+            <Sort filteredRestaurants={filteredRestaurants} pTagStyle={pTagStyle} inputStyle={inputStyle} handleSearchTermChange={handleSearchTermChange} h3Style={h3Style}/>
         </div>
     )
 }

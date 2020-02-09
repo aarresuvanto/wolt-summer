@@ -30,7 +30,6 @@ const RestaurantTile = ({ image, description, name }) => {
     }
 
     const nameStyle = {
-        textAlign: "center",
         fontStyle: "font-family: nimbus-sans-extended, sans-serif",
         textAlign: "left",
         marginLeft: 15,
