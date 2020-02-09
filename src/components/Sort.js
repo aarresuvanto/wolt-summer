@@ -22,6 +22,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         backgroundColor: "#6fb4e2",
         boxShadow: "1px 1px 2px #e8e8e8",
         display: "block",
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
     }
 
     const buttonStyleBottom = {
@@ -37,6 +38,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         backgroundColor: "#6fb4e2",
         boxShadow: "1px 1px 2px #e8e8e8",
         display: "block",
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
     }
 
     const sortRestaurantsAlphabeticallyDESC = () => {

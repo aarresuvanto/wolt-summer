@@ -14,7 +14,6 @@ const RestaurantTile = ({ image, description, name }) => {
     }
 
     const imageStyle = {
-        textAlign: "center",
         width: "auto",
         height: 200,
         borderTopRightRadius: 7,
@@ -22,6 +21,7 @@ const RestaurantTile = ({ image, description, name }) => {
     }
 
     const descriptionStyle = {
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
         textAlign: "left",
         marginLeft: 15,
         color: "grey",
@@ -30,6 +30,8 @@ const RestaurantTile = ({ image, description, name }) => {
     }
 
     const nameStyle = {
+        textAlign: "center",
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
         textAlign: "left",
         marginLeft: 15,
         marginTop: 8,

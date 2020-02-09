@@ -5,12 +5,12 @@ const Headline = () => {
         marginTop: 50,
         marginBottom: 50,
         fontStyle: "font-family: nimbus-sans-extended, sans-serif",
-        fontWeight: 600,
+        fontWeight:600,
     }
 
     return (
         <div>
-            <h2 style={headlineStyle}>Restaurant Search</h2>
+            <h3 style={headlineStyle}>Restaurant Search</h3>
         </div>
     )
 }

@@ -14,12 +14,16 @@ const Search = ({ restaurants }) => {
     }
 
     const pTagStyle = {
+        textAlign: "center",
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
         paddingTop: 50,
         fontSize: 16,
     }
 
     const h3Style = {
         textAlign: "center",
+        fontStyle: "font-family: nimbus-sans-extended, sans-serif",
+        fontWeight: 400,
         marginTop: 200,
     }
 
