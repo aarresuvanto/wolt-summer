@@ -6,7 +6,6 @@ const Search = ({ restaurants }) => {
     const [ searchTerm, setSearchTerm ] = useState('')
 
     const inputStyle = {
-        marginTop: 50,
         width: 270,
         height: 30,
         border: "1px solid lightGrey",
@@ -36,7 +35,6 @@ const Search = ({ restaurants }) => {
 
     const handleSearchTermChange = (event) => {
         event.preventDefault()
-        console.log(event.target.value)
         setSearchTerm(event.target.value)
     }
 

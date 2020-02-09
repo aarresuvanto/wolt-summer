@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import Search from './components/Search'
+import Footer from './components/Footer'
+import Headline from './components/Headline'
 
 const restaurantData = require('./restaurants.json')
 
@@ -9,7 +11,9 @@ function App() {
 
   return (
     <div className="App">
+      <Headline /> 
       <Search restaurants={restaurants}/>
+      <Footer />
     </div>
   );
 }

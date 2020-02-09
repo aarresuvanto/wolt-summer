@@ -87,7 +87,14 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         )
     })
 
-    const sortedDESC = sorted.reverse()
+    if(sorted.length === 0) {
+        return (
+            <div>
+                <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+                <h3 style={h3Style}>No restaurants to show with this search term</h3>
+            </div>
+        )
+    }
 
     if(asc) {
         return (
@@ -101,22 +108,10 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         )
     }
 
-
-
-    if(sorted.length === 0) {
-        return (
-            <div>
-                <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
-                <h3 style={h3Style}>No restaurants to show with this search term</h3>
-            </div>
-        )
-    }
-
-
     return (
         <div>
             <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
-            <p style={orStyle}>Or sort</p>
+            <p style={orStyle}>Or</p>
             <button style={buttonStyleTop} onClick={sortRestaurantsAlphabeticallyASC}>Sort ascending</button>
             <button onClick={sortRestaurantsAlphabeticallyDESC} style={buttonStyleBottom}>Sort descending</button>
             {sortedRestaurantsToShow}
