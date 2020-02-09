@@ -1,5 +1,5 @@
 # Restaurant Search - Wolt Summer 2020
-Aarre Suvanto- Front-end software engineer pre-assignment
+Aarre Suvanto - Front-end software engineer pre-assignment
 ### About
 This app is a part of my application to Wolt to work as a front-end software engineer intern for summer 2020.
 
