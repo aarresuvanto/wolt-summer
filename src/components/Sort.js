@@ -92,7 +92,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
     if(sorted.length === 0) {
         return (
             <div>
-                <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+                <input autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
                 <h3 style={h3Style}>No restaurants to show with this search term</h3>
             </div>
         )
@@ -101,7 +101,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
     if(asc) {
         return (
             <div>
-                <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+                <input autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
                 <p style={orStyle}>Or</p>
                 <button style={buttonStyleTop} onClick={sortRestaurantsAlphabeticallyASC}>Sort ascending</button>
                 <button onClick={sortRestaurantsAlphabeticallyDESC} style={buttonStyleBottom}>Sort descending</button>
@@ -112,7 +112,7 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
 
     return (
         <div>
-            <input placeholder="Search for restaurants by name" autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+            <input autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
             <p style={orStyle}>Or</p>
             <button style={buttonStyleTop} onClick={sortRestaurantsAlphabeticallyASC}>Sort ascending</button>
             <button onClick={sortRestaurantsAlphabeticallyDESC} style={buttonStyleBottom}>Sort descending</button>
