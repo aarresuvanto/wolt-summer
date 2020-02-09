@@ -34,6 +34,7 @@ const Search = ({ restaurants }) => {
 
     const handleSearchTermChange = (event) => {
         event.preventDefault()
+        console.log(event.target.value)
         setSearchTerm(event.target.value)
     }
 
@@ -50,10 +51,7 @@ const Search = ({ restaurants }) => {
 
     return (
         <div>
-            <p style={pTagStyle}>Search for restaurants by name</p>
-            <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
-            <Sort filteredRestaurants={filteredRestaurants}/>
-            {restaurantsBySearchTerm}
+            <Sort filteredRestaurants={filteredRestaurants} pTagStyle={pTagStyle} inputStyle={inputStyle} handleSearchTermChange={handleSearchTermChange} restaurantsBySearchTerm={restaurantsBySearchTerm} restaurants={restaurants} h3Style={h3Style}/>
         </div>
     )
 }

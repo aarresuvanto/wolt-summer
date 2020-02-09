@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import RestaurantTile from './RestaurantTile'
 
-const Sort = ({ filteredRestaurants }) => {
+const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChange, restaurantsBySearchTerm, h3Style}) => {
     const [ sortedRestaurants, setSortedRestaurants ] = useState([])
     
     const orStyle = {
@@ -27,14 +27,48 @@ const Sort = ({ filteredRestaurants }) => {
         }))
     }
 
-    const sortedRestaurantsToShow = sortedRestaurants.map((restaurant, index) => {
+    const sorted = filteredRestaurants.sort((restaurantA, restaurantB) => {
+        if(restaurantA > restaurantB) {
+            return -1
+        }
+        if(restaurantB > restaurantA) {
+            return 1
+        }
+        return 0
+    })
+
+    const sortedRestaurantsToShow = sorted.map((restaurant, index) => {
         return (
             <RestaurantTile key={index} image={restaurant.image} description={restaurant.description} name={restaurant.name}/>
         )
     })
 
+    if(sorted.length === 0) {
+        return (
+            <div>
+                <p style={pTagStyle}>Search for restaurants by name</p>
+                <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+                <h3 style={h3Style}>No restaurants to show with this search term</h3>
+            </div>
+        )
+    }
+
+    if(sortedRestaurantsToShow.length === 0) {
+        return (
+            <div>
+                <p style={pTagStyle}>Search for restaurants by name</p>
+                <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
+                <p style={orStyle}>Or</p>
+                <button onClick={sortRestaurantsAlphabetically} style={buttonStyle}>Sort alphabetically</button>
+                {restaurantsBySearchTerm}
+            </div>
+        )
+    }
+
     return (
         <div>
+            <p style={pTagStyle}>Search for restaurants by name</p>
+            <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
             <p style={orStyle}>Or</p>
             <button onClick={sortRestaurantsAlphabetically} style={buttonStyle}>Sort alphabetically</button>
             {sortedRestaurantsToShow}
