@@ -105,8 +105,6 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
             {sortedRestaurantsToShow}
         </div>
     )
-
-  
 }
 
 export default Sort
