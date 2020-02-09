@@ -69,23 +69,13 @@ const Sort = ({ filteredRestaurants, pTagStyle, inputStyle, handleSearchTermChan
         setLoad(true)
     }
 
-    const sorted = filteredRestaurants.sort((restaurantA, restaurantB) => {
-        if(restaurantA > restaurantB) {
-            return -1
-        }
-        if(restaurantB > restaurantA) {
-            return 1
-        }
-        return 0
-    })
-
-    const sortedRestaurantsToShow = sorted.map((restaurant, index) => {
+    const sortedRestaurantsToShow = filteredRestaurants.map((restaurant, index) => {
         return (
             <RestaurantTile key={index} image={restaurant.image} description={restaurant.description} name={restaurant.name}/>
         )
     })
 
-    if(sorted.length === 0) {
+    if(filteredRestaurants.length === 0) {
         return (
             <div>
                 <input autoComplete="off" type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
