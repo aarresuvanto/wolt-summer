@@ -6,10 +6,12 @@ const Search = ({ restaurants }) => {
     const [ searchTerm, setSearchTerm ] = useState('')
 
     const inputStyle = {
+        marginTop: 50,
         width: 270,
-        height: 25,
+        height: 30,
         border: "1px solid lightGrey",
         borderRadius: 4,
+        outline: "none",
     }
 
     const pTagStyle = {
@@ -37,17 +39,6 @@ const Search = ({ restaurants }) => {
         console.log(event.target.value)
         setSearchTerm(event.target.value)
     }
-
-    if(filteredRestaurants.length === 0) {
-        return (
-            <div>
-                <p style={pTagStyle}>Search for restaurants by name</p>
-                <input type="text" style={inputStyle} onChange={handleSearchTermChange}></input>
-                <h3 style={h3Style}>No restaurants to show with this search term</h3>
-            </div>
-        )
-    }
-
 
     return (
         <div>
