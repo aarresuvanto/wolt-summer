@@ -16,5 +16,6 @@ Three fields from restaurants.json are used which are
 ### Built with
 - React.js (project was bootstrapped using create-react-app)
 ### How to start the application
-1. Install dependencies with command 'npm install'
-2. Start application with command 'npm start'
+1. Navigate to master branch
+2. Instll dependencies with command 'npm install'
+3. Start application with command 'npm start'
