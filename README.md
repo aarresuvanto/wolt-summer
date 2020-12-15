@@ -18,3 +18,5 @@ Three fields from restaurants.json are used which are
 ### How to start the application
 1. Navigate to master branch
 2. Start application with command 'npm start'
+### Test the app
+- The app is deployed on Heroku at https://immense-reef-45063.herokuapp.com and can be tested there
